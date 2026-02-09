@@ -3,22 +3,10 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  // Navigation links
-  const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Leads", href: "/leads" },
-    { name: "Leaderboard", href: "/leaderboard" },
-    { name: "Events", href: "/events" },
-    { name: "Gallery", href: "/gallery" },
-  ];
 
   // Control navbar visibility based on scroll
   const controlNavbar = () => {
@@ -41,10 +29,6 @@ const Navbar = () => {
       };
     }
   }, [lastScrollY]);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
 
   return (
     <div

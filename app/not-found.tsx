@@ -1,14 +1,10 @@
 "use client";
-import React from 'react';
-import { motion } from 'framer-motion';
-import ParticlesComponent from "@/components/Particles";
-
+import React from "react";
+import { motion } from "framer-motion";
 
 function NotFound404() {
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
-              <ParticlesComponent id="particles-background"/>
-
       {/* Animated background particles */}
       <div className="absolute inset-0">
         {[...Array(20)].map((_, i) => (
@@ -69,7 +65,8 @@ function NotFound404() {
             Page Not Found
           </h2>
           <p className="text-gray-300 text-lg leading-relaxed">
-            The page you&apos;re looking for seems to have wandered off into the digital void.
+            The page you&apos;re looking for seems to have wandered off into the
+            digital void.
           </p>
         </motion.div>
 
@@ -88,7 +85,7 @@ function NotFound404() {
           >
             Go Back
           </motion.button>
-          
+
           <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
@@ -97,7 +94,7 @@ function NotFound404() {
               background: "rgba(255, 255, 255, 0.05)",
               backdropFilter: "blur(10px)",
             }}
-            onClick={() => window.location.href = '/'}
+            onClick={() => (window.location.href = "/")}
           >
             Home
           </motion.button>
@@ -114,7 +111,7 @@ function NotFound404() {
         animate={{ rotate: 360 }}
         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
       />
-      
+
       <motion.div
         className="absolute bottom-1/4 right-1/4 w-12 h-12 border-2 border-pink-400 rounded-full opacity-10"
         animate={{ rotate: -360 }}
@@ -125,3 +122,4 @@ function NotFound404() {
 }
 
 export default NotFound404;
+

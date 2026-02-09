@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import ParticlesComponent from "@/components/Particles";
+import ParticlesComponent from "@/components/particles";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ospcvitc.club"),
@@ -99,4 +99,3 @@ export default function RootLayout({
     </html>
   );
 }
-
