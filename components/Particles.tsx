@@ -1,3 +1,4 @@
+"use client";
 
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useEffect, useMemo } from "react";
@@ -6,10 +7,7 @@ import { useEffect, useMemo } from "react";
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 // import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
 
-
-
-const ParticlesComponent = (props) => {
-
+const ParticlesComponent = (props: any) => {
   // this should be run only once per application lifetime
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -20,16 +18,10 @@ const ParticlesComponent = (props) => {
       //await loadFull(engine);
       await loadSlim(engine);
       //await loadBasic(engine);
-    }).then(() => {
-    });
+    }).then(() => {});
   }, []);
 
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
-
-
-  const options = useMemo(
+  const options: any = useMemo(
     () => ({
       background: {
         color: {
@@ -100,8 +92,8 @@ const ParticlesComponent = (props) => {
     [],
   );
 
-
-  return <Particles id={props.id} init={particlesLoaded} options={options} />; 
+  return <Particles id={props.id} options={options} />;
 };
 
 export default ParticlesComponent;
+

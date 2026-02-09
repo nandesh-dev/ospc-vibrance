@@ -73,63 +73,6 @@ const Navbar = () => {
           </div>
         </Link>
       </div>
-
-
-
-      {/* Desktop Menu */}
-      <nav className="hidden md:flex flex-row gap-6">
-        {navLinks.map((link) => (
-          <Link
-            key={link.name}
-            href={link.href}
-            className="text-white text-sm hover:text-purple-500 transition-colors duration-300"
-          >
-            {link.name}
-          </Link>
-        ))}
-      </nav>
-
-      {/* Mobile Menu Button */}
-      <button onClick={toggleMobileMenu} className="md:hidden text-white">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-5 h-5"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-          />
-        </svg>
-      </button>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <motion.div
-          className="absolute top-[60px] left-0 w-full bg-black p-6 md:hidden"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 50 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-        >
-          <div className="flex flex-col gap-4 items-center">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-white text-lg hover:text-purple-500 transition-colors duration-300"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
-        </motion.div>
-      )}
     </div>
   );
 };
