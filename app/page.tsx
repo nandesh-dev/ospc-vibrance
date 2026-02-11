@@ -101,7 +101,7 @@ const Page: React.FC = () => {
     <div className="min-h-dvh p-8">
       <div className="relative container mx-auto md:px-8">
         <h1 className="text-4xl font-bold text-white text-center mb-16">
-          TechnoVIT Events
+          Vibrance Events
         </h1>
         <div className="grid grid-cols-[1px_1fr] md:grid-cols-[1fr_1px_1fr] gap-y-[-1px]">
           <br />
