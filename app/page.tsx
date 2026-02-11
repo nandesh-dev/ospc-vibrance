@@ -17,34 +17,82 @@ type EventDetails = {
 
 const EVENTS: EventDetails[] = [
   {
-    name: "Stranger Clues",
-    posterUrl: "/vibrance/stranger-clues.jpeg",
+    name: "Mad House",
+    posterUrl: "/vibrance/madhouse.jpeg",
     posterSize: { height: 544, width: 384 },
-    description:
-      "Stranger Clues is a tech and logic-based treasure hunt accessed via a dedicated event app. Participants solve coding challenges, puzzles, and cryptic clues to progress through levels. Teams compete using reasoning, creativity, and precision to uncover the hidden treasure.",
-    whatsappUrl: "https://chat.whatsapp.com/GhEJHYP0nW80H31wViVwf2",
+    description: `MADHOUSE is a fast-paced team event full of chaos, twists, and intense mini-challenges. Test your squad’s speed, trust, and adaptability across 4 unpredictable rounds!
+
+🎯 What you’ll face:
+* Mystery box surprises
+* Blindfold & trust trials
+* Speed and balance challenges
+* Twisted rules and sudden tasks
+
+📅 20th February, 2026 (Friday)
+⏰ 8 AM – 3 PM
+📍 Kasturba Hall, VIT Chennai
+👥 2–4 members per team
+💰 ₹50 per person
+
+📞 For queries, contact:
+* Prasanna – 9790970726
+* Raghvendra – 9789889768
+* Ilangkumaran – 8668180796
+`,
+    whatsappUrl: "https://chat.whatsapp.com/BLQgh9z47SQ1UEO4J03b9R?mode=gi_t",
     websiteUrl: null,
-    registrationUrl: "https://chennaievents.vit.ac.in/technovit/",
+    registrationUrl:
+      "https://chennaievents.vit.ac.in/vitchennai_vibrance/eventPreview",
   },
   {
-    name: "CraftMySite",
-    posterUrl: "/vibrance/craft-my-site.jpeg",
+    name: "Midnight Protocol",
+    posterUrl: "/vibrance/midnight-protocol.jpeg",
     posterSize: { height: 543, width: 384 },
-    description:
-      "A workshop followed by a contest to create stunning personal portfolio websites. Participants will learn to use and leverage AI-powered design tools or code their sites from scratch.",
-    whatsappUrl: "https://chat.whatsapp.com/G9KLeDv8Pqg6FF54Z766Le?mode=wwc",
+    description: `Investigators, assemble! A ₹5M Quantum Encoder Chip is stolen and “MIDNIGHT PROTOCOL” is active.
+Can your squad solve the mystery before time runs out? 🕵️‍♂️
+
+🔍 What you’ll do:
+* Solve clue-based stations
+* Decode evidence
+* Eliminate suspects
+* Face interrogation rounds
+
+📅 18th February, 2026
+🕘 9:00 AM – 2:00 PM
+📍 AB3-601, VIT Chennai
+👥 2–4 members per team
+💸 ₹50 per person
+
+📞 For queries:
+* Adithya Aravind – 7418560907
+* Vishwa – 8939132364
+* Ganesh – 9342034315
+`,
+    whatsappUrl: "https://chat.whatsapp.com/BlXYxBXXRfDBcGoREHUPhg?mode=gi_t",
     websiteUrl: null,
-    registrationUrl: "https://chennaievents.vit.ac.in/technovit/",
+    registrationUrl:
+      "https://chennaievents.vit.ac.in/vitchennai_vibrance/eventPreview",
   },
   {
-    name: "Game Jam",
-    posterUrl: "/vibrance/game-jam.jpeg",
+    name: "Playverse",
+    posterUrl: "/vibrance/playverse.jpeg",
     posterSize: { height: 683, width: 384 },
-    description:
-      "A one-day intensive Game Jam where participants design and build games from scratch. Teams brainstorm, develop, and refine gameplay, visuals, and sound with mentor guidance. The event ends with final demos, feedback, and awards for creativity and execution.",
-    whatsappUrl: "https://chat.whatsapp.com/LJ64zce3J78972L4b33tgS",
+    description: `PLAYVERSE is a short and exciting team event with multiple fun mini-games. Each round will test your speed, quick thinking, and teamwork through surprise challenges like reaction tasks and blindfold games.
+Come with your squad and enjoy a competitive, high-energy experience!
+
+👥 Team Size: 2–4 members
+📅 Date: 20 February 2026
+⏰ Time: 11:00 AM – 2:00 PM
+📍 Venue: AB3-001, VIT Chennai
+💸 Entry Fee: ₹50 per person
+
+📞 For queries:
+* Srinidhi – 7904234261
+* Rishika – 9042046930`,
+    whatsappUrl: "https://chat.whatsapp.com/LLIxnNkkVMl8SyXpEoPeKR?mode=gi_t",
     websiteUrl: null,
-    registrationUrl: "https://chennaievents.vit.ac.in/technovit/",
+    registrationUrl:
+      "https://chennaievents.vit.ac.in/vitchennai_vibrance/eventPreview",
   },
 ];
 
@@ -145,7 +193,16 @@ const Event: React.FC<EventProps> = ({
           className="h-auto w-full max-w-80 mb-8"
         />
       )}
-      <p className="text-white mb-6 text-center">{description}</p>
+      <p className="text-white mb-6 md:mx-8">
+        {description.split("\n").map((part, i) => {
+          return (
+            <React.Fragment key={i}>
+              {part}
+              <br />
+            </React.Fragment>
+          );
+        })}
+      </p>
       <div className="w-full flex flex-col md:flex-row justify-end gap-4">
         {whatsappUrl === null || <Button href={whatsappUrl}>Whatsapp</Button>}
         {websiteUrl === null || <Button href={websiteUrl}>More Info</Button>}
