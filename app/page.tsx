@@ -19,7 +19,7 @@ const EVENTS: EventDetails[] = [
   {
     name: "Mad House",
     posterUrl: "/vibrance/madhouse.jpeg",
-    posterSize: { height: 544, width: 384 },
+    posterSize: { height: 543, width: 384 },
     description: `MADHOUSE is a fast-paced team event full of chaos, twists, and intense mini-challenges. Test your squad’s speed, trust, and adaptability across 4 unpredictable rounds!
 
 🎯 What you’ll face:
@@ -76,7 +76,7 @@ Can your squad solve the mystery before time runs out? 🕵️‍♂️
   {
     name: "Playverse",
     posterUrl: "/vibrance/playverse.jpeg",
-    posterSize: { height: 683, width: 384 },
+    posterSize: { height: 544, width: 384 },
     description: `PLAYVERSE is a short and exciting team event with multiple fun mini-games. Each round will test your speed, quick thinking, and teamwork through surprise challenges like reaction tasks and blindfold games.
 Come with your squad and enjoy a competitive, high-energy experience!
 
@@ -151,7 +151,9 @@ const Page: React.FC = () => {
                   <div
                     className={cn(
                       "absolute size-4 rounded-full bottom-[-0.5rem] left-[-0.5rem] bg-white",
-                      i & 1 ? "right-[-0.5rem] left-auto" : "md:left-[-0.5rem]",
+                      i & 1
+                        ? "md:right-[-0.5rem] left-[-0.5rem] md:left-auto"
+                        : "md:left-[-0.5rem]",
                     )}
                   />
                 </div>
@@ -173,6 +175,7 @@ type EventProps = EventDetails;
 const Event: React.FC<EventProps> = ({
   name,
   posterUrl,
+  posterSize,
   description,
   whatsappUrl,
   websiteUrl,
@@ -188,8 +191,8 @@ const Event: React.FC<EventProps> = ({
         <Image
           alt={`${name} poster`}
           src={posterUrl}
-          width={300}
-          height={400}
+          width={posterSize.width}
+          height={posterSize.height}
           className="h-auto w-full max-w-80 mb-8"
         />
       )}
